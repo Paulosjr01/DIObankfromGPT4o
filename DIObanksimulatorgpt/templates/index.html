@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Welcome to DIO PYTHON BACK END COURSE</h1>
+  <p>Current Balance: ${{ balance }}</p>
+  <form action="/deposit" method="post">
+    <div class="form-group">
+      <label for="amount">Deposit Amount:</label>
+      <input type="number" class="form-control" id="amount" name="amount" step="0.01" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Deposit</button>
+  </form>
+  <form action="/withdraw" method="post" class="mt-3">
+    <div class="form-group">
+      <label for="amount">Withdraw Amount:</label>
+      <input type="number" class="form-control" id="amount" name="amount" step="0.01" required>
+    </div>
+    <button type="submit" class="btn btn-danger">Withdraw</button>
+  </form>
+  <a href="/statement" class="btn btn-info mt-3">View Statement</a>
+{% endblock %}
